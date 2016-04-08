@@ -9,8 +9,6 @@ ENV \
   MIX_ENV=prod \
   NPM_VERSION=3 \
   NODE_ENV=production \
-  NPM_CONFIG_LOGLEVEL=info \
-  CONFIG_FLAGS="--fully-static --without-npm" \
   DEL_PKGS="libgcc libstdc++" \
   RM_DIRS=/usr/include \
   REFRESHED_AT=2016-04-8
@@ -27,7 +25,9 @@ RUN apk add --no-cache --update \
   erlang-stdlib erlang-erts erlang-tools erlang-syntax-tools erlang-sasl \
   erlang-crypto erlang-public-key erlang-ssl erlang-ssh erlang-asn1 erlang-inets \
   erlang-mnesia erlang-odbc erlang-xmerl erlang-erl-interface erlang-parsetools erlang-eunit \
-  nodejs=4.4.2-r0 elixir=1.2.4-r0
+  nodejs=4.4.2-r0 elixir=1.2.4-r0 && \
+  npm install npm -g --no-progress && \
+  rm -rf /var/cache/apk/*
 
 ENV PATH=${HOME}/node_modules/.bin:/opt/elixir-${ELIXIR_VERSION}/bin:$PATH
 
