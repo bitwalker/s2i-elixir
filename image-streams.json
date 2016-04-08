@@ -24,11 +24,11 @@
             },
             "from": {
               "kind": "ImageStreamTag",
-              "name": "1.2.4"
+              "name": "1.3"
             }
           },
           {
-            "name": "1.2.4",
+            "name": "1.3",
             "annotations": {
               "description": "Build and run Elixir applications",
               "iconClass": "icon-elixir",
@@ -38,7 +38,7 @@
             },
             "from": {
               "kind": "DockerImage",
-              "name": "bitwalker/s2i-elixir:1.2.4"
+              "name": "bitwalker/s2i-elixir:1.3"
             }
           }
         ]
