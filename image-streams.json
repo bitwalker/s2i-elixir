@@ -18,27 +18,13 @@
             "annotations": {
               "description": "Build and run Elixir applications",
               "iconClass": "icon-elixir",
-              "tags": "builder,elixir",
-              "supports":"elixir",
-              "sampleRepo": "https://github.com/bitwalker/phoenix_example.git"
-            },
-            "from": {
-              "kind": "ImageStreamTag",
-              "name": "1.3"
-            }
-          },
-          {
-            "name": "1.3",
-            "annotations": {
-              "description": "Build and run Elixir applications",
-              "iconClass": "icon-elixir",
               "tags": "builder,elixir,elixir-1.2.4",
               "supports":"elixir:1.2.4,elixir",
               "sampleRepo": "https://github.com/bitwalker/phoenix_example.git"
             },
             "from": {
               "kind": "DockerImage",
-              "name": "bitwalker/s2i-elixir:1.3"
+              "name": "bitwalker/s2i-elixir:latest"
             }
           }
         ]
