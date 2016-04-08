@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+
+# If a user passes --debug, allow them to inspect the image by booting to a bash shell
+# Use it like: docker run -i -t bitwalker/s2i-elixir --debug
+if [ "$1" == "--debug" ]; then
+    exec /bin/bash
+fi
+
+# Runs the Elixir application.
+mix help phoenix.server >/dev/null 2>/dev/null
+exit_status="$?"
+if [ "$exit_status" -eq 0 ]; then
+    exec mix phoenix.start
+fi
+    exec mix run --no-halt
+fi

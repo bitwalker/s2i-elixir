@@ -1,0 +1,48 @@
+
+{
+  "kind": "ImageStreamList",
+  "apiVersion": "v1",
+  "metadata": {},
+  "items": [
+    {
+      "kind": "ImageStream",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "s2i-elixir",
+        "creationTimestamp": null
+      },
+      "spec": {
+        "tags": [
+          {
+            "name": "latest",
+            "annotations": {
+              "description": "Build and run Elixir applications",
+              "iconClass": "icon-elixir",
+              "tags": "builder,elixir",
+              "supports":"elixir",
+              "sampleRepo": "https://github.com/bitwalker/elixir-s2i-example.git"
+            },
+            "from": {
+              "kind": "ImageStreamTag",
+              "name": "1.2.4"
+            }
+          },
+          {
+            "name": "1.2.4",
+            "annotations": {
+              "description": "Build and run Elixir applications",
+              "iconClass": "icon-elixir",
+              "tags": "builder,elixir,elixir-1.2.4",
+              "supports":"elixir:1.2.4,elixir",
+              "sampleRepo": "https://github.com/bitwalker/elixir-s2i-example.git"
+            },
+            "from": {
+              "kind": "ImageStreamTag",
+              "name": "1.2.4"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
