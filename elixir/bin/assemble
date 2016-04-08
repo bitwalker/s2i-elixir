@@ -31,7 +31,7 @@ mix do deps.get, compile
 
 if [ -f "package.json" ]; then
     echo "---> Building your Node application from source"
-    npm install --no-progress
+    npm install -d --no-progress
 
     which webpack >/dev/null 2>/dev/null
     exit_status="$?"
