@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 echo "---> Installing application source"
 cp -Rf /tmp/src/. ./
 rm -rf ./node_modules
@@ -34,15 +32,13 @@ if [ -f "package.json" ]; then
     npm install -d --no-progress
 
     echo "----> Building frontend code..."
-    which webpack >/dev/null 2>/dev/null
-    exit_status="$?"
-    if [ "$exit_status" -eq 0 ]; then
+    s=$(which webpack 2>/dev/null)
+    if [ "$s" != "" ]; then
         echo "----> Using Webpack.."
         webpack -p
     else
-        which brunch >/dev/null 2>/dev/null
-        exit_status="$?"
-        if [ "$exit_status" -eq 0 ]; then
+        s=$(which brunch 2>/dev/null)
+        if [ "$s" != "" ]; then
             echo "----> Using Brunch.."
             brunch build --production
         else
