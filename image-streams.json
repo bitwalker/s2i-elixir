@@ -20,25 +20,25 @@
               "iconClass": "icon-elixir",
               "tags": "builder,elixir",
               "supports":"elixir",
-              "sampleRepo": "https://github.com/bitwalker/elixir-s2i-example.git"
+              "sampleRepo": "https://github.com/bitwalker/phoenix_example.git"
             },
             "from": {
               "kind": "ImageStreamTag",
-              "name": "1.2.4"
+              "name": "1.0"
             }
           },
           {
-            "name": "1.2.4",
+            "name": "1.0",
             "annotations": {
               "description": "Build and run Elixir applications",
               "iconClass": "icon-elixir",
               "tags": "builder,elixir,elixir-1.2.4",
               "supports":"elixir:1.2.4,elixir",
-              "sampleRepo": "https://github.com/bitwalker/elixir-s2i-example.git"
+              "sampleRepo": "https://github.com/bitwalker/phoenix_example.git"
             },
             "from": {
               "kind": "ImageStreamTag",
-              "name": "1.2.4"
+              "name": "1.0"
             }
           }
         ]
